@@ -1,0 +1,63 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" type="text/css" href="{% static '/css/list.css' %}" >
+    <title>Document</title>
+</head>
+<body>
+<center>
+<h1> Enter the University ID to fetch the details of a particular University</h1>
+     <form method="post" action="all_unis">
+      {% csrf_token %}
+        <input type="number" name="university_id" placeholder="Enter the University ID">
+      </form>
+      <div>
+     {% for message in messages %}
+     <h3>{{message}}</h3>
+     {% endfor %}
+     </div>
+    {% block contents %}
+     <h1> List of all the Universities </h1>
+       <table>
+         <tr>
+            <th>
+            Univesity ID
+           </th>
+             <th>
+                University Name
+            </th>
+            <th>
+                University Location
+            </th>
+            <th>
+                About the University
+            </th>
+            <th>
+                Update
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+<!--           Loop thru to enter each uni details fetched from database-->
+        {% for event in uni_list %}
+        <tr>
+            <td>{{ event.university_id }}</td>
+            <td>{{ event.university_name }}</td>
+            <td>{{ event.university_location }}</td>
+            <td>{{ event.university_about }}</td>
+            <td><a href = "{% url 'edit_uni' event.id %}">Update</a></td>
+            <td><a href = "{% url 'delete_uni' event.id %} ">Delete</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
+    </center>
+</body>
+</html>

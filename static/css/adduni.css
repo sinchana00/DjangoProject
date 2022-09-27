@@ -1,0 +1,25 @@
+body{
+background-color: F7ECDE
+}
+
+input[type=text],[type =password],[type =email],[type =number] {
+  width: 20%;
+  padding: 6px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+button{
+   background-color: 472D2D;
+   color: white;
+   width: 20%;
+   height: 2.6rem
+}
+a{
+   color: white
+}
+
+
+a:hover{
+background-color: 553939;
+color:white
+}

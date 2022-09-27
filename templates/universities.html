@@ -1,0 +1,45 @@
+{% load static %}
+<!--This is the page where you add university and edit the university details with the help of the ID-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Universities</title>
+     <link rel="stylesheet" type="text/css" href="{% static '/css/adduni.css' %}" >
+</head>
+<body>
+<center>
+    <div>
+    {% for message in messages %}
+    <h1>{{message}}</h1>
+    {% endfor %}
+</div>
+</div>
+    <h1>Welcome {{username}}!</h1>
+      <button><a href="all_unis">List of all Universities</a></button>
+    <h2>Do you want to add or edit university details?</h2>
+    <hr>
+  <h2>Enter the details to create the University</h2>
+   <form method="post" action="universities">
+       {% csrf_token %}
+       <input type = number name = "university_id" placeholder="University ID"><br>
+       <input type = text name ="university_name" placeholder="University Name"><br>
+       <input type = text name="university_location" placeholder="University Location"><br>
+       <input type = text name = "university_about" placeholder="University About"><br><br>
+        <button type="submit">Create</button>
+   </form>
+    <br><hr>
+    <h2>Enter the University ID and about that you would like to edit</h2>
+    <form method ="post" action ="edituniversities">
+        {% csrf_token %}
+        <input type = number name="university_id" placeholder="University ID"><br>
+        <input type = text name ="updatedAbout" placeholder ="Lets edit"><br><br>
+         <button type="submit">Update</button>
+    </form>
+    </center>
+
+
+</body>
+</html>

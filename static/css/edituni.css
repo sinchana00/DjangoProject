@@ -1,0 +1,16 @@
+input[type=text] {
+  width: 35%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+   text-align: center;
+}
+button{
+   background-color: 472D2D;
+   color: white;
+   width:33rem;
+   height: 2rem;
+}
+body{
+   background-color: F7ECDE;
+}

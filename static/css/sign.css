@@ -1,0 +1,21 @@
+body{
+   background-color: F7ECDE;
+}
+
+
+button{
+   background-color: 472D2D;
+   color: white;
+   width: 20%;
+   height: 3rem
+}
+input[type=text],[type =password],[type =email] {
+  width: 20%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+a{
+   color: white
+}
+
